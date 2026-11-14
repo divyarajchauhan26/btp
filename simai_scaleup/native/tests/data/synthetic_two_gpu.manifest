@@ -1,0 +1,5 @@
+schema_version=1
+
+# kernel=name|trace-path|comma-separated-dependency-names-or--
+kernel=gpu0|synthetic_two_gpu.trace|-
+kernel=gpu1|synthetic_gpu1.trace|-

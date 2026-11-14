@@ -1,0 +1,19 @@
+schema_version=2
+kernel_name=synthetic_gpu0_copy_v2
+trace_producer=simai.synthetic
+launch_id=iteration-0.copy-gpu0
+hardware_id=generic-scaleup-v1
+timestamp_semantics=earliest_issue
+device=1
+kernel_kind=communication
+timestamp_unit=ns
+workgroup_residency_slots=1
+register_buffer=7101
+buffer=101|1|4096
+buffer=201|2|8192
+
+# timestamp|workgroup|wavefront|operation|address|locality|owner|buffer|size
+record=10|1|1|load|0x0000|local|1|101|64
+record=20|1|1|store|0x1000|remote|2|201|64
+record=30|1|1|load|0x1040|remote|2|201|128
+record=45|1|1|store|0x0040|local|1|101|128

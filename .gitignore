@@ -1,0 +1,5 @@
+*.exe
+*.log
+simai_scaleup/build*/
+simai_scaleup/.git_sub_backup/
+simai_scaleup/third_party/chakra/

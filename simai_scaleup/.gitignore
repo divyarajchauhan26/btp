@@ -1,0 +1,12 @@
+.vscode/
+build/
+build-*/
+bin/
+results/
+third_party/chakra/
+*.log
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store

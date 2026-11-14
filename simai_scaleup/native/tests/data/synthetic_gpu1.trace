@@ -1,0 +1,10 @@
+schema_version=1
+kernel_name=synthetic_gpu1_copy
+device=2
+kernel_kind=communication
+timestamp_unit=ns
+workgroup_residency_slots=1
+register_buffer=7002
+
+record=10|1|1|load|0x0000|local|2|201|64
+record=20|1|1|store|0x2000|remote|1|101|64

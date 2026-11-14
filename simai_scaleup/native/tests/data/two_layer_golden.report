@@ -1,0 +1,8 @@
+schema_version=1
+deterministic_seed=20261005
+end_to_end_ns=730
+layer=0,name=layer_0,start_ns=0,compute_ns=100,compute_complete_ns=100,communication_issue_ns=100,communication_complete_ns=680,exposed_communication_ns=580,finish_ns=680,transferred_payload_bytes=14000
+layer=1,name=layer_1,start_ns=680,compute_ns=50,compute_complete_ns=730,communication_issue_ns=730,communication_complete_ns=730,exposed_communication_ns=0,finish_ns=730,transferred_payload_bytes=0
+rail=0,pdus=14,pdu_payload_bytes=14000,wire_bytes=14000,busy_time_ns=560,transmission_attempts=14,retries=0,transmitted_wire_bytes=14000
+schedule=layer:0,source:native,algorithm:gather_reduce_broadcast,version:1
+counters=issued_operations:21,finalized_operations:21,transactions:56,logical_transaction_bytes:14000,pdus:14,packets:14,credits_consumed:0,credits_returned:0,retries:0,completions:21,logical_operation_bytes:14000,pdu_payload_bytes:14000,wire_bytes:14000,transmitted_wire_bytes:14000

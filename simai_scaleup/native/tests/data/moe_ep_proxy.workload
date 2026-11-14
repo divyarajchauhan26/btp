@@ -1,0 +1,23 @@
+# Synthetic expert-exchange communication-shape proxy; not a measured trace.
+schema_version=1
+deterministic_seed=20261005
+endpoint_count=8
+collective_algorithm=auto
+link_bandwidth_gbps=200
+propagation_delay_ns=10
+transaction_payload_bytes=256
+pdu_payload_bytes=4096
+pdu_overhead_bytes=0
+rail_count=4
+switch_enabled=1
+switch_queue_capacity_pdus=4
+switch_latency_ns=5
+switch_credits_per_egress=2
+credit_return_latency_ns=10
+error_injection_pdu_id=0
+error_injection_attempts=0
+maximum_retries=0
+replay_latency_ns=0
+layer=0,400,alltoall,4096,after_previous_finish
+layer=1,200,none,0,after_previous_compute
+layer=2,100,allreduce,4096,after_previous_compute

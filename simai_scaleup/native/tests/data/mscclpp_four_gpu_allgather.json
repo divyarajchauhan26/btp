@@ -1,0 +1,49 @@
+{
+  "name": "simai_four_gpu_direct_allgather",
+  "collective": "allgather",
+  "protocol": "Simple",
+  "inplace": true,
+  "reuse_resources": false,
+  "gpus": [
+    {
+      "id": 0, "input_chunks": 4, "output_chunks": 4, "scratch_chunks": 0,
+      "threadblocks": [{"id": 0, "ops": [
+        {"name": "put", "src_buff": [{"type": "i", "index": 0, "size": 1}], "dst_buff": [{"buffer_id": 0, "index": 0, "size": 1}], "channel_type": "memory"},
+        {"name": "put", "src_buff": [{"type": "i", "index": 0, "size": 1}], "dst_buff": [{"buffer_id": 1, "index": 0, "size": 1}], "channel_type": "memory"},
+        {"name": "put", "src_buff": [{"type": "i", "index": 0, "size": 1}], "dst_buff": [{"buffer_id": 2, "index": 0, "size": 1}], "channel_type": "memory"}
+      ]}],
+      "channels": [{"channel_type": "memory", "connected_to": [1]}, {"channel_type": "memory", "connected_to": [2]}, {"channel_type": "memory", "connected_to": [3]}],
+      "remote_buffers": [{"rank": 1, "type": "o", "access_channel_types": ["memory"]}, {"rank": 2, "type": "o", "access_channel_types": ["memory"]}, {"rank": 3, "type": "o", "access_channel_types": ["memory"]}], "semaphores": []
+    },
+    {
+      "id": 1, "input_chunks": 4, "output_chunks": 4, "scratch_chunks": 0,
+      "threadblocks": [{"id": 0, "ops": [
+        {"name": "put", "src_buff": [{"type": "i", "index": 1, "size": 1}], "dst_buff": [{"buffer_id": 0, "index": 1, "size": 1}], "channel_type": "memory"},
+        {"name": "put", "src_buff": [{"type": "i", "index": 1, "size": 1}], "dst_buff": [{"buffer_id": 1, "index": 1, "size": 1}], "channel_type": "memory"},
+        {"name": "put", "src_buff": [{"type": "i", "index": 1, "size": 1}], "dst_buff": [{"buffer_id": 2, "index": 1, "size": 1}], "channel_type": "memory"}
+      ]}],
+      "channels": [{"channel_type": "memory", "connected_to": [0]}, {"channel_type": "memory", "connected_to": [2]}, {"channel_type": "memory", "connected_to": [3]}],
+      "remote_buffers": [{"rank": 0, "type": "o", "access_channel_types": ["memory"]}, {"rank": 2, "type": "o", "access_channel_types": ["memory"]}, {"rank": 3, "type": "o", "access_channel_types": ["memory"]}], "semaphores": []
+    },
+    {
+      "id": 2, "input_chunks": 4, "output_chunks": 4, "scratch_chunks": 0,
+      "threadblocks": [{"id": 0, "ops": [
+        {"name": "put", "src_buff": [{"type": "i", "index": 2, "size": 1}], "dst_buff": [{"buffer_id": 0, "index": 2, "size": 1}], "channel_type": "memory"},
+        {"name": "put", "src_buff": [{"type": "i", "index": 2, "size": 1}], "dst_buff": [{"buffer_id": 1, "index": 2, "size": 1}], "channel_type": "memory"},
+        {"name": "put", "src_buff": [{"type": "i", "index": 2, "size": 1}], "dst_buff": [{"buffer_id": 2, "index": 2, "size": 1}], "channel_type": "memory"}
+      ]}],
+      "channels": [{"channel_type": "memory", "connected_to": [0]}, {"channel_type": "memory", "connected_to": [1]}, {"channel_type": "memory", "connected_to": [3]}],
+      "remote_buffers": [{"rank": 0, "type": "o", "access_channel_types": ["memory"]}, {"rank": 1, "type": "o", "access_channel_types": ["memory"]}, {"rank": 3, "type": "o", "access_channel_types": ["memory"]}], "semaphores": []
+    },
+    {
+      "id": 3, "input_chunks": 4, "output_chunks": 4, "scratch_chunks": 0,
+      "threadblocks": [{"id": 0, "ops": [
+        {"name": "put", "src_buff": [{"type": "i", "index": 3, "size": 1}], "dst_buff": [{"buffer_id": 0, "index": 3, "size": 1}], "channel_type": "memory"},
+        {"name": "put", "src_buff": [{"type": "i", "index": 3, "size": 1}], "dst_buff": [{"buffer_id": 1, "index": 3, "size": 1}], "channel_type": "memory"},
+        {"name": "put", "src_buff": [{"type": "i", "index": 3, "size": 1}], "dst_buff": [{"buffer_id": 2, "index": 3, "size": 1}], "channel_type": "memory"}
+      ]}],
+      "channels": [{"channel_type": "memory", "connected_to": [0]}, {"channel_type": "memory", "connected_to": [1]}, {"channel_type": "memory", "connected_to": [2]}],
+      "remote_buffers": [{"rank": 0, "type": "o", "access_channel_types": ["memory"]}, {"rank": 1, "type": "o", "access_channel_types": ["memory"]}, {"rank": 2, "type": "o", "access_channel_types": ["memory"]}], "semaphores": []
+    }
+  ]
+}

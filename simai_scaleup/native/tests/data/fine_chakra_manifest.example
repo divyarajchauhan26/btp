@@ -1,0 +1,18 @@
+# Paths are resolved relative to this manifest.
+schema_version=1
+trace=1|chakra.0.et
+trace=2|chakra.1.et
+
+# synthetic=name|zero-based-rank:source-node-id|synthetic-trace-path
+synthetic=rank0_pre|0:0|synthetic_two_gpu.trace
+
+# compute=name|zero-based-rank:source-node-id|workgroups|wavefronts|residency|cycles
+# Use "duration" to represent the captured Chakra duration as one abstract
+# Reduce operation. This is a fallback compute model, not Load/Store replay.
+compute=rank1_pre|1:0|1|1|1|duration
+
+# collective=name|rank:node,...|plan|payload-or-trace|residency|alignment|reduce-cycles
+collective=allreduce|0:7,1:7|mscclpp_two_gpu.json|trace|1|64|4
+
+compute=rank0_post|0:9|1|1|1|duration
+compute=rank1_post|1:9|1|1|1|duration

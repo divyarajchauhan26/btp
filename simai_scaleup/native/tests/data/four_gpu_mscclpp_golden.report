@@ -1,0 +1,7 @@
+schema_version=1
+deterministic_seed=20261019
+end_to_end_ns=602
+layer=0,name=layer_0,start_ns=0,compute_ns=100,compute_complete_ns=100,communication_issue_ns=100,communication_complete_ns=602,exposed_communication_ns=502,finish_ns=602,transferred_payload_bytes=12288
+rail=0,pdus=12,pdu_payload_bytes=12288,wire_bytes=12288,busy_time_ns=492,transmission_attempts=12,retries=0,transmitted_wire_bytes=12288
+schedule=layer:0,source:mscclpp,algorithm:simai_four_gpu_direct_allgather,version:official-json-v1
+counters=issued_operations:12,finalized_operations:12,transactions:48,logical_transaction_bytes:12288,pdus:12,packets:12,credits_consumed:0,credits_returned:0,retries:0,completions:12,logical_operation_bytes:12288,pdu_payload_bytes:12288,wire_bytes:12288,transmitted_wire_bytes:12288
